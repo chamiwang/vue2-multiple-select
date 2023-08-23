@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联动demo</title>
+    <link rel="stylesheet" type="text/css" href="css/element-ui.css">
+</head>
+<body>
+    <div id="app" class="row" >
+        <chami-type-manual title="主要称号" name="positional_level" :init_items="[['国家级','长江学者特聘教授'],['省部级','2233学者'],['无']]" :all_list="position_list"></chami-type-manual>
+    </div>
+</body>
+
+<script src="js/vue.2.6.10.js"></script>
+<script src="js/element-ui.js"></script>
+<script type="text/javascript" src="../dist/vue2-chami-type-manual.js"></script>
+
+
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            position_list: [['国家级', '省部级', '无'], ['中科院院士', '工程院院士', '长江学者特聘教授', '长江学者讲座教授', '长江学者青年学者', '杰青', '优青', '青年千人计划', '千人计划', '万人计划科技创新领军人才', '万人计划科技创业领军人才', '万人计划百千万工程领军人才', '万人计划哲学社会科学领军人才', '万人计划教学名师', '万人计划杰出人才', '万人计划青年拔尖人才', '新世纪百千万人才', '新世纪优秀人才', '新世纪优秀人才计划', '教育部新世纪优秀人才']],
+        }
+    });
+</script>
+</html>

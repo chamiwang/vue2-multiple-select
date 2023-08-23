@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三级联动demo</title>
+    <link rel="stylesheet" type="text/css" href="css/element-ui.css">
+</head>
+<body>
+    <div id="app" class="row" >
+        <chami-multiple-group title="职称职级" name="positional_level" :init_items="[['哲学社会科学研究人员','正高级','研究员'],['高等学校教师','正高级','教授(一级)'],['实验技术人才','中级','实验师']]" :all_list="position_list"></chami-multiple-group>
+    </div>
+</body>
+
+<script src="js/vue.2.6.10.js"></script>
+<script src="js/element-ui.js"></script>
+<script type="text/javascript" src="../dist/vue2-chami-multiple-group.js"></script>
+
+
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            position_list:new Map([
+                ['高等学校教师',
+                    new Map([
+                        ['正高级',['教授(一级)','教授(二级)','教授(三级)','教授(四级)']],
+                        ['副高级',['副教授']],
+                        ['中级',['讲师']],
+                    ])
+                ],
+                ['哲学社会科学研究人员',
+                    new Map([
+                        ['正高级',['研究员']],
+                        ['副高级',['副研究员']],
+                        ['中级',['助理研究员']],
+                    ])
+                ],
+
+                ['实验技术人才',
+                    new Map([
+                        ['正高级',['正高级实验师']],
+                        ['副高级',['高级实验师']],
+                        ['中级',['实验师']],
+                    ])
+                ],
+
+
+
+                ['经济专业人员',
+                    new Map([
+                        ['正高级',['正高级经济师','正高级人力资源管理师','正高级知识产权师']],
+                        ['副高级',['高级经济师','高级人力资源管理师','高级知识产权师']],
+                        ['中级',['经济师','人力资源管理师','知识产权师']],
+                    ])
+                ],
+            ]),
+        },
+    });
+</script>
+</html>
